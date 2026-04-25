@@ -158,7 +158,21 @@ class Spaceship(pygame.sprite.Sprite):
             self.pos += self.vel * dt
             
             # Adding a hard coded world border that cannot be moved past
-            self.pos = pygame.Vector2(max(0, min(self.pos.x, 10000)), max(0, min(self.pos.y, 10000)))
+            # Checking x value
+            if self.pos.x <= 0:
+                self.pos.x = 0
+                if self.vel.x < 0: self.vel.x = 0
+            elif self.pos.x >= 10000:
+                self.pos.x = 10000
+                if self.vel.x > 0: self.vel.x = 0
+
+            # Checking y value
+            if self.pos.y <= 0:
+                self.pos.y = 0
+                if self.vel.y < 0: self.vel.y = 0
+            elif self.pos.y >= 10000:
+                self.pos.y = 10000
+                if self.vel.y > 0: self.vel.y = 0
             
             # Applying friction if moving
             if self.vel.length() > 0: self.vel -= self.vel * self.friction * dt

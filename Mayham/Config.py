@@ -66,7 +66,7 @@ Configure = {
    "cruiser_bullet_speed" : 500,
    "cruiser_rotation"     :  40,
    "cruiser_friction"     :-0.2,
-   "cruiser_cooldown"     : -0.5,
+   "cruiser_cooldown"     :-0.5,
    
    # Destroyer
    "destroyer_thrust"       : -100,
@@ -74,6 +74,6 @@ Configure = {
    "destroyer_bullet_speed" : -500,
    "destroyer_rotation"     :  -40,
    "destroyer_friction"     :  0.2, 
-   "destroyer_cooldown"     :   0.5,
+   "destroyer_cooldown"     :  0.5,
    
 }   
