@@ -190,7 +190,7 @@ class Mayhem(BaseScene):
                             impact_angle = math.degrees(math.atan2(-(player.pos.y - planet.pos.y), player.pos.x - planet.pos.x))
                             player.relative_angle = impact_angle - planet.rotation_angle
                             
-                        elif planet.touch == "kill" or player.vel.length()>=500: 
+                        elif planet.touch == "kill" or player.vel.length()>=500 and planet.name != "BrittleHollow" and planet.name != "WhiteHole": 
                             if player == self.p1: self.vp1.trigger_death(f"Killed by: {planet.name}")
                             else:                 self.vp2.trigger_death(f"Killed by: {planet.name}")
                             
