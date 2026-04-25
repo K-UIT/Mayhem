@@ -182,7 +182,7 @@ class Mayhem(BaseScene):
                         to_ship = (player.pos - planet.pos)
                         
                         # Figuring out if the planet is landable, pushes you away or will kill you (or teleport)
-                        if planet.touch == "land":
+                        if planet.touch == "land" and player.vel.length()<500:
                             # Do not care about the entry speed, just lock the player to the planet
                             player.landed_on = planet
                             player.vel = pygame.Vector2(0, 0)
@@ -190,7 +190,7 @@ class Mayhem(BaseScene):
                             impact_angle = math.degrees(math.atan2(-(player.pos.y - planet.pos.y), player.pos.x - planet.pos.x))
                             player.relative_angle = impact_angle - planet.rotation_angle
                             
-                        elif planet.touch == "kill": 
+                        elif planet.touch == "kill" or player.vel.length()>=500: 
                             if player == self.p1: self.vp1.trigger_death(f"Killed by: {planet.name}")
                             else:                 self.vp2.trigger_death(f"Killed by: {planet.name}")
                             

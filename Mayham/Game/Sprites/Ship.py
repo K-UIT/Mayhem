@@ -77,7 +77,7 @@ class Spaceship(pygame.sprite.Sprite):
                 ax_initial, ay_initial = 0, -1
                 ax = ax_initial * math.cos(theta) - ay_initial * math.sin(theta)
                 ay = ax_initial * math.sin(theta) + ay_initial * math.cos(theta)
-                
+
                 # Increasing acceleration and velocity when thrusting
                 acceleration      = pygame.Vector2(ax, ay) * self.thrust_power
                 self.vel         += acceleration * dt
