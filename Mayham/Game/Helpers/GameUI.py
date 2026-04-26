@@ -35,7 +35,7 @@ class UI():
             info_size  = self.dim[0] // 35
             
             # -Overlay-
-            self.overlay = Image("Assets/Backgrounds/Panell.Png", (0,0), layer = 5, size = (self.dim[0], self.dim[1]))
+            self.overlay = Image("Assets/Backgrounds/Panel.Png", (0,0), layer = 5, size = (self.dim[0], self.dim[1]))
             
             # -Panel Locators-
             left_x  = self.padding
