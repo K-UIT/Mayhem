@@ -209,7 +209,7 @@ class MiniMap(pygame.sprite.Sprite):
             # Only draw if player is within world bounds (Used because dead players get put out of bounds)
             if 0 <= player.pos.x <= self.world_size[0]:
                 map_x, map_y = int(player.pos.x * self.scale), int(player.pos.y * self.scale)
-                color = (0, 150, 255) if i == 0 else (255, 50, 50)
+                color = player.color
                 
                 # Simple triangle shape for player
                 ship_size = 14
