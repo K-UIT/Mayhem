@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 
 class BaseScene(ABC):
-    """Parent class for scenes rendered by the main loop, taken from Pokemon code"""
+    """Parent class for scenes rendered by the main loop, taken from my Pokemon code"""
 
     def __init__(self, screen : object):
         """Store pygame screen and cached dimensions"""

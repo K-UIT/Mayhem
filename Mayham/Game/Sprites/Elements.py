@@ -15,6 +15,7 @@ class Image(pygame.sprite.Sprite):
             bg_size = self.image.get_size()
             
             # Downscale then upscale to create a smooth blur effect
+            """This method is not my own, I read about it online, see appendix"""
             small_surf = pygame.transform.smoothscale(self.image, (bg_size[0]//blur, bg_size[1]//blur))
             self.image = pygame.transform.smoothscale(small_surf, bg_size)
             
