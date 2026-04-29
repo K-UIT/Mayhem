@@ -120,7 +120,13 @@ All class modifiers can be changed in the configs file, and one can even add mor
 
 ### UI:
 This is where the game runs, it does all of the logic and control handling. p1 controls the ship on the left side while p2 controls the one on the right. The player name can be seen at the top of the UI.
-At the top of the UI one can also find the players score. Hitting a player gives you 200 points, hitting a fuel barrel gives you 50, and dying in any way removes 100 points. If the points go negative the text goes red, so show you're in the negative.
+At the top of the UI one can also find the players score. 
+
+- Hitting a player gives you 200 points
+- Hitting a fuel barrel gives you 50 points
+- Dying in any way removes 100 points.
+
+If the points go negative the text goes red, so show you're in the negative.
 
 At the top of the UI right before the camera, is the current world coordinates. The word map is 10,000 x 10,000, and so using the coordinates might not be too useful, but they turn red when the player hits a world border, which is quite nice as it's invisible.
 
@@ -145,4 +151,13 @@ Safe zones: These planets let you land on them, if you go under the speed limit 
 - Timber Hearth: This is the earth looking planet which is second closest to the sun. The moon (Attlerock) does not have a hitbox, as this would require more complex hitbox logic.
 - Giants Deep: This is planet number 4 from the sun, it is a gas giant, and is landable. There should have been more mechanics tied to this planet, for lore reasons, but it got complicated so it's just a landable planet.
 
-Bump: 
+Bump: There is one planet that players can only bump into, or well technically two but they function as one planet. 
+- Hourglass Twins: These two planets orbit eachother and is the planet(s) closest to the sun. Because they are so small, and have such a weird orbit, I decided not to add landing to them, and instead just treat them as something bumping into the player. This just pushes the player back, almost like when bumping into another player. Just like landable planets if you go too fast when collliding with the twins, you will die. The hitbox is set between the two planets, but it works fine enough.
+
+White Hole: A White hole has negative mass, so it has reverse gravity, meaning it pushes everything away from it. There is one white hole in the solar system.
+- White Hole Station: The white hole station is the object orbiting the furthest out from the sun. It pushes everything away from it. It also has no collision, so you cannot die from running ito it. But also, because the gravity is so strong, reaching the center is really difficult. 
+
+Teleport: There is one planet that when collided with teleports the player to the white hole station at the edge of the worldmap.
+- Brittle Hollow: Brittle Hollow is the third planet from the sun, and it does not have any collision. Instead, if you reach the center of the planet you reach a black hole that teleports you to the white hole at the outskirts of the solar system. Because it has no collision the player can enter Brittle Hollow as quickly as they want without worrying about crashing.
+
+Given more time there would have been 3 more celestial bodies. 2 of them I cannot talk about for spoiler reasons, but one of them was supposed to be a comet (The interloper) that followed an eliptical curve. This was tricky to implement, and have it not hit other planets and such, so I just did not do it. The sun was also going to have some extra mechanics tied to it, but I ended up not adding it, for again spoiler reasons.
