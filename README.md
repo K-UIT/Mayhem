@@ -124,6 +124,25 @@ At the top of the UI one can also find the players score. Hitting a player gives
 
 At the top of the UI right before the camera, is the current world coordinates. The word map is 10,000 x 10,000, and so using the coordinates might not be too useful, but they turn red when the player hits a world border, which is quite nice as it's invisible.
 
-At the bottom of the UI is the fuel bar, this can be clicked to add more fuel. The color of the fuel bar changed depending on how much fuel you have left. 
-If it's over 65% it's green, if it's less than 65% but over 45% it's yellow. If it's less than 45% but over 20% it's orange, and if it's less than 20% it's red.
+At the bottom of the UI is the fuel bar, this can be clicked to add more fuel. The color of the fuel bar changed depending on how much fuel you have left:
+- Green: If it's over 65% it's green
+- Yellow: If it's less than 65% but over 45% it's yellow
+- Orange: If it's less than 45% but over 20% it's orange
+- Red: If it's less than 20% it's red
 
+
+### Planets:
+
+There are 7 celestial bodies in the game, all their properties are taken from the game Outer Wilds. The correct mass and orbital radius was found in the following spreadhsheet: https://docs.google.com/spreadsheets/d/1MbGYmH20m5NLCEsCe-v_kkn3oldxVY67vj4bF5UJMko/edit?gid=0\#gid=0
+
+There are 5 different kinds of planets, each of them, and what planets fit into each type can be listed in the following way
+
+Hazards: These celestial bodies kill you on collision, no matter what speed you travel at, there are 2 dangerous celestial bodies, those are
+- Sun: The sun does not orbit anything, and is locked at the center of the world map. Going into the sun kills the player instantly.
+- Dark Bramble: Dark Bramle is the second furhest out in the solar system, going into it will kill the player instantly for spoiler related reasons. Dark bramble does not rotate at all, which is source accurate. It is also not a planet, and neither is the sun, which is why I use wording like "celestial bodies" instead of just saying planets.
+
+Safe zones: These planets let you land on them, if you go under the speed limit of 500 distance units per tick. If you surpass this speed and try to land, you'll die like on a hazard celestial body. There are 2 planets that let you land on them, and once you do you start to refuel. Those planets are the following
+- Timber Hearth: This is the earth looking planet which is second closest to the sun. The moon (Attlerock) does not have a hitbox, as this would require more complex hitbox logic.
+- Giants Deep: This is planet number 4 from the sun, it is a gas giant, and is landable. There should have been more mechanics tied to this planet, for lore reasons, but it got complicated so it's just a landable planet.
+
+Bump: 
